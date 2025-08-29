@@ -1,0 +1,80 @@
+.game-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-height: 100vh;
+  background: linear-gradient(180deg, #0f172a 0%, #111827 100%);
+  color: #e5e7eb;
+}
+
+.hud {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 12px;
+}
+
+.hud-item {
+  background: rgba(255, 255, 255, 0.06);
+  padding: 8px 12px;
+  border-radius: 8px;
+}
+
+.primary {
+  background: #22c55e;
+  color: #081225;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+}
+.primary:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.playfield {
+  position: relative;
+  flex: 1;
+  overflow: hidden;
+  margin: 0 auto 24px;
+  width: min(900px, calc(100% - 24px));
+  border-radius: 16px;
+  background: radial-gradient(1200px 600px at 50% 110%, rgba(59, 130, 246, 0.18), transparent),
+              radial-gradient(900px 400px at 0% -10%, rgba(99, 102, 241, 0.12), transparent),
+              linear-gradient(180deg, #0ea5e9 0%, #1e3a8a 80%);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4) inset;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding: 24px;
+  background: linear-gradient(180deg, rgba(17,24,39,0.50), rgba(17,24,39,0.35));
+  backdrop-filter: blur(2px);
+}
+.overlay h1 {
+  margin: 0 0 8px 0;
+  font-size: 48px;
+}
+.overlay p {
+  margin: 0 0 16px 0;
+  opacity: 0.9;
+}
+
+.bubble {
+  position: absolute;
+  border-radius: 999px;
+  border: 2px solid rgba(255, 255, 255, 0.35);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25), inset 0 12px 24px rgba(255, 255, 255, 0.12);
+  transition: transform 80ms ease, box-shadow 120ms ease;
+}
+.bubble:active {
+  transform: scale(0.9);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.35), inset 0 8px 16px rgba(255, 255, 255, 0.18);
+}
